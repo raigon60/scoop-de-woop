@@ -4,40 +4,43 @@ using UnityEngine;
 
 public class SquidController : MonoBehaviour
 {
-    public float speed = 5f;      // How fast the squid moves
-    private Animator anim;        // Reference to the Animator we just set up
+    public float speed = 5f;
+    public float jumpForce = 5f;
+
+    private Animator anim;
+    private Rigidbody rb;
 
     void Start()
     {
-        // Tell the script to find the Animator on the squid
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        // Get input from WASD or Arrow Keys
+        // --- 1. MOVEMENT ---
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
-
-        // Create a movement vector based on input
         Vector3 movement = new Vector3(moveX, 0f, moveZ);
 
-        // If the player is pressing a movement key...
         if (movement.magnitude > 0.1f)
         {
-            // 1. Move the squid in the world
             transform.Translate(movement * speed * Time.deltaTime, Space.World);
-
-            // 2. Make the squid face the direction it is moving
             transform.rotation = Quaternion.LookRotation(movement);
 
-            // 3. Tell the Animator to play the Swim animation!
-            anim.SetBool("isSwimming", true);
+            // This is now looking for your Pudu's walking parameter!
+            anim.SetBool("isWalking", true);
         }
         else
         {
-            // If the player let go of the keys, stop swimming and go back to Idle
-            anim.SetBool("isSwimming", false);
+            anim.SetBool("isWalking", false);
+        }
+
+        // --- 2. PHYSICS JUMPING ---
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetTrigger("JumpTrigger");
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 }

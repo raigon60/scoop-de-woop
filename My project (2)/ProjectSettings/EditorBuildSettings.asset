@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cosmic_Retro_Laboratory_2_Demo/Scenes/Scenes/audio_scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Cosmic_Retro_Laboratory_2_Demo/Scenes/Scenes/PlanetRoom.unity
+    guid: 047bcac38bc2b1c48ada9edeb959edcc
+  - enabled: 1
+    path: Assets/Cosmic_Retro_Laboratory_2_Demo/Scenes/Scenes/main_menu.unity
+    guid: 96984346791e3457b898e14ec354c390
   m_configObjects: {}

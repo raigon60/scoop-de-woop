@@ -291,9 +291,10 @@ GameObject:
   - component: {fileID: 2451545264301525503}
   - component: {fileID: 2451545264301525496}
   - component: {fileID: 2451545264301525497}
+  - component: {fileID: 2484729706195382446}
   m_Layer: 0
   m_Name: Gecko_prefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,6 +377,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 2.5
+--- !u!114 &2484729706195382446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370041332049924520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4666fec790e6aec4ba1ad2aff7649f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3394267219745954355
 GameObject:
   m_ObjectHideFlags: 0

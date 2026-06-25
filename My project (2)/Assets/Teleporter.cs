@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement; // Required for changing scenes!
 
 public class Teleporter : MonoBehaviour
 {
-    public string sceneToLoad = "PlanetRoom"; // Type the exact name of your next scene here
+    public string sceneToLoad = "MoonRoom"; // Type the exact name of your next scene here
 
     private void OnTriggerEnter(Collider other)
     {

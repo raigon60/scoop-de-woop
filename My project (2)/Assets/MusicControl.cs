@@ -2,20 +2,13 @@ using UnityEngine;
 
 public class MusicControl : MonoBehaviour
 {
-    public AudioSource music;
-
-    // Called when the Music On button is clicked
-    public void MusicOn()
+    public void TurnMusicOff()
     {
-        if (!music.isPlaying)
-        {
-            music.Play();
-        }
+        AudioManager.instance.StopMusic();
     }
 
-    // Called when the Music Off button is clicked
-    public void MusicOff()
+    public void TurnMusicOn()
     {
-        music.Stop();
+        AudioManager.instance.PlayMusic();
     }
 }

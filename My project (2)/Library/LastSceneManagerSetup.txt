@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Cosmic_Retro_Laboratory_2_Demo/Scenes/Scenes/cosmicretrosquid.unity
+- path: Assets/Cosmic_Retro_Laboratory_2_Demo/Scenes/Scenes/main_menu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

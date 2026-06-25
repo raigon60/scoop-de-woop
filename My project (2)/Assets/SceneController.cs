@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public void OpenSettings()
+    public void LoadSettings()
     {
         SceneManager.LoadScene("audio_scene");
     }
 
-    public void OpenMainMenu()
+    public void LoadMainMenu()
     {
         SceneManager.LoadScene("main_menu");
     }

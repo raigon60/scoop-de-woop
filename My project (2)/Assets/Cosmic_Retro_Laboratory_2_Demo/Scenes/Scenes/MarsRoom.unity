@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 81f714daf7144784b8a2f42f1cd30927, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.23315534, g: 0.23638168, b: 0.27299175, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1235,8 +1235,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1.1843995}
-  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.4078005}
+  m_Size: {x: 2, y: 2, z: 0.39296162}
+  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.0120815635}
 --- !u!1 &933474608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,8 +1806,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1.1302724}
-  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.43486404}
+  m_Size: {x: 2, y: 2, z: 0.354079}
+  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.046767354}
 --- !u!1001 &1176829152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2058,8 +2058,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1.1302724}
-  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.43486404}
+  m_Size: {x: 2, y: 2, z: 0.37221837}
+  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.055837035}
 --- !u!1001 &1335972183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2323,8 +2323,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1.1843995}
-  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.4078005}
+  m_Size: {x: 2, y: 2, z: 0.35257497}
+  m_Center: {x: -0.00000047683716, y: 1.25, z: 0.008111708}
 --- !u!1001 &1485496942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3331,8 +3331,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1.1843995}
-  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.4078005}
+  m_Size: {x: 2, y: 2, z: 0.36887133}
+  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.000036418438}
 --- !u!1001 &1874734858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3583,8 +3583,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1.1843995}
-  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.4078005}
+  m_Size: {x: 2, y: 2, z: 0.39178967}
+  m_Center: {x: -0.00000047683716, y: 1.25, z: -0.011495575}
 --- !u!1001 &1969486842
 PrefabInstance:
   m_ObjectHideFlags: 0

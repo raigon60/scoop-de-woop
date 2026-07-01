@@ -10,6 +10,9 @@ public class AvatarSelector : MonoBehaviour
     [Tooltip("Type the exact name of your gameplay lab scene!")]
     public string gameplaySceneName = "cosmicretrosquid";
 
+    [Tooltip("Type the exact name of your main menu scene!")]
+    public string mainMenuSceneName = "main_menu";
+
     [Header("Panels")]
     [Tooltip("Drag your MainMenuPanel from the Hierarchy here!")]
     public GameObject mainMenuPanel;
@@ -88,5 +91,23 @@ public class AvatarSelector : MonoBehaviour
 
         // 2. Load the actual gameplay scene where the avatars are waiting!
         SceneManager.LoadScene(gameplaySceneName);
+    }
+
+    // NEW METHOD: Call this from your "Back to Menu" button in the lab scene
+    public void ReturnToMenu()
+    {
+        Debug.Log("[AvatarSelector] Returning to the Main Menu...");
+
+        // Fix: Because the avatar uses DontDestroyOnLoad, it can get disconnected from the 'avatars' list 
+        // if you teleported to another planet and came back. 
+        // The absolute safest way to clean up is to find anything tagged "Player" and destroy it!
+        GameObject[] persistentPlayers = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in persistentPlayers)
+        {
+            Destroy(player);
+        }
+
+        // Load the main menu scene
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 }

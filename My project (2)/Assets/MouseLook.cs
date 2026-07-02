@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    // --- SINGLETON PATTERN ---
-    // This allows any other script (like your character spawner) to easily find the camera
-    // by simply writing: MouseLook.Instance.SetTarget(newAvatar);
+
     public static MouseLook Instance { get; private set; }
 
     [Header("Target to Follow")]
@@ -37,7 +35,7 @@ public class MouseLook : MonoBehaviour
 
     void Awake()
     {
-        // Set up the static instance so other scripts can easily talk to this camera
+
         if (Instance == null)
         {
             Instance = this;
@@ -51,22 +49,16 @@ public class MouseLook : MonoBehaviour
 
     void Start()
     {
-        // --- FAILSAFE 1: THE AUTOMATIC DETACH ---
-        // If the camera is a child of the player, dynamically rip it out at runtime.
-        // This completely prevents the recursive "spastic parenting" feedback loop!
+
         if (transform.parent != null)
         {
             transform.SetParent(null);
         }
 
-        // --- FAILSAFE 2: THE SCALE RESET ---
-        // Distorted scale causes extreme perspective shearing and warping.
-        // We force it back to a perfect (1, 1, 1) scale!
+
         transform.localScale = Vector3.one;
 
-        // --- FAILSAFE 3: PHYSICS DESTRUCTION ---
-        // A camera should never have physics. If any exist, destroy them so the camera
-        // cannot collide with the player or walls and get launched into space.
+
         if (TryGetComponent<Collider>(out Collider col))
         {
             Destroy(col);
@@ -76,11 +68,11 @@ public class MouseLook : MonoBehaviour
             Destroy(rb);
         }
 
-        // Enable standard mouse cursor for ARPG gameplay
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // Find our initial player target
+
         if (target == null)
         {
             FindActivePlayer();
@@ -89,58 +81,54 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        // Rotate camera view left/right around the player by holding down the Right Mouse Button
+
         if (allowRotation && Input.GetMouseButton(1))
         {
             currentYaw += Input.GetAxis("Mouse X") * rotationSensitivity * Time.deltaTime;
         }
     }
 
-    // LateUpdate runs after ALL movement and physics updates.
+
     void LateUpdate()
     {
-        // If our target is missing/destroyed, try to dynamically locate the active player
+
         if (target == null)
         {
             FindActivePlayer();
-            if (target == null) return; // If we still can't find one, try again next frame
+            if (target == null) return; 
         }
 
-        // 1. Calculate the ideal target position based on rotation, distance, and height
         Vector3 dir = new Vector3(0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(pitchAngle, currentYaw, 0f);
 
         Vector3 targetPosition = target.position + rotation * dir;
-        targetPosition.y = target.position.y + height; // Apply the elevation height
+        targetPosition.y = target.position.y + height; 
 
-        // --- FAILSAFE 4: DUAL-MODE FRAME-RATE INDEPENDENT LERP ---
+
         float t;
         if (smoothSpeed <= 1f)
         {
             float clampedSpeed = Mathf.Clamp(smoothSpeed, 0.001f, 0.999f);
-            t = 1f - Mathf.Pow(1f - clampedSpeed, Time.deltaTime * 60f); // Convert 0-1 lerp to 60fps independent
+            t = 1f - Mathf.Pow(1f - clampedSpeed, Time.deltaTime * 60f); 
         }
         else
         {
-            t = 1f - Mathf.Exp(-smoothSpeed * Time.deltaTime); // Use high-speed decay
+            t = 1f - Mathf.Exp(-smoothSpeed * Time.deltaTime); 
         }
 
         transform.position = Vector3.Lerp(transform.position, targetPosition, t);
 
-        // 3. Keep the camera focused directly on the player's torso
+
         transform.LookAt(target.position + Vector3.up * 1f);
     }
 
-    /// <summary>
-    /// Searches the scene for an active player, making sure it doesn't target itself.
-    /// Only active (enabled) game objects tagged "Player" will be considered.
-    /// </summary>
+
     private void FindActivePlayer()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject p in players)
         {
-            // Verify the object is active in the hierarchy, and is not this camera
+
             if (p.activeInHierarchy && p != this.gameObject && p.transform != this.transform)
             {
                 target = p.transform;
@@ -149,10 +137,7 @@ public class MouseLook : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Explicitly tells the camera who to track. Any other script can call this!
-    /// </summary>
-    /// <param name="newTarget">The Transform of the newly spawned avatar.</param>
+
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;

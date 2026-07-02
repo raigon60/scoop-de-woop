@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -423,9 +423,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 164e0000
+      m_SelectedIDs: 660e0000
       m_LastClickedID: 0
-      m_ExpandedIDs: b42affff302cffffbe32ffffca32ffffaa37ffffb637ffffae39ffffba39ffff8a50ffff6256ffff6e58ffff586affff186bffff0c6cffffd66cffffcc6dffff446fffff1a70ffff3870ffff5471ffff147dffffee7fffff1680ffff9281ffffc681ffffde83ffffda84ffff6287ffffda8cffff9e91ffff3e92ffff8496ffff229affff589affff749cffff849dffff889effffdaa0ffff7accffffe2d7ffff4adbffffcce4ffffeae6ffff24e9ffff8ceeffff5aefffff7eefffff36f1ffff12f2ffffeef2ffffccf3ffffd8f5ffffe0f5ffffeef5fffff8f5ffff02f6ffff72fbffff9e540000c2ae0000f2ae00009ab90000cab9000030be000060be00006ac20000eac70000
+      m_ExpandedIDs: 72fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -487,22 +487,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Haziq\Documents\GitHub\scoop-de-woop\My project (2)
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 22}
-    m_SelectedIDs: ae3f0000
-    m_LastClickedID: 16302
-    m_ExpandedIDs: 000000007a3f00007c3f00007e3f0000803f0000823f0000843f0000863f0000883f00008a3f00008c3f00008e3f0000903f000000ca9a3b
+    m_SelectedIDs: 7e3f0000
+    m_LastClickedID: 16254
+    m_ExpandedIDs: 000000007e3f0000803f0000823f0000843f0000863f0000883f00008a3f00008c3f00008e3f0000903f0000923f0000943f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -530,7 +530,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007a3f00007c3f00007e3f0000803f0000823f0000843f0000863f0000883f00008a3f00008c3f00008e3f0000903f0000
+    m_ExpandedIDs: 000000007e3f0000803f0000823f0000843f0000863f0000883f00008a3f00008c3f00008e3f0000903f0000923f0000943f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

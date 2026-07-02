@@ -10,7 +10,6 @@ public class PlanetGravity : MonoBehaviour
 
     void Start()
     {
-        // Change the global gravity the moment this scene loads
         Physics.gravity = new Vector3(0, planetGravityY, 0);
     }
 }

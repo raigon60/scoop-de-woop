@@ -19,7 +19,6 @@ public class ConsoleSpawner : MonoBehaviour
 
     void Update()
     {
-        // Only allow spawning if the player is standing inside the zone
         if (isPlayerNear)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -35,28 +34,26 @@ public class ConsoleSpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // When the player walks up to the desk
         if (other.CompareTag("Player"))
         {
             isPlayerNear = true;
 
             if (uiPopup != null)
             {
-                uiPopup.SetActive(true); // Show the popup!
+                uiPopup.SetActive(true); 
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // When the player walks away from the desk
         if (other.CompareTag("Player"))
         {
             isPlayerNear = false;
 
             if (uiPopup != null)
             {
-                uiPopup.SetActive(false); // Hide the popup!
+                uiPopup.SetActive(false); 
             }
         }
     }
